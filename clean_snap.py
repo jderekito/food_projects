@@ -3,7 +3,9 @@ from arcpy import env
 env.overwriteOutput = True
 
 # Post-man step #1: select/delete snaps that are dups
-# Post-man step #2: select/update snap to 1 for all non-snaps that are snap_dups
+# Post-man step #2: select where SNAPs are 0 and then update SNAP to SNAP_DUP catching for all non-snaps that are snap_dups
+# Logic if it is within 30.0 of a snap and happens to have same match_code
+# its too close to not be a duplicate
 
 from arcpy import env
 env.workspace = r"C:\Data\PhD\Projects\FoodProjects\Data\Food_Deserts\Scratch.gdb"
